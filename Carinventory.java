@@ -1,5 +1,6 @@
 package com.carinventory.main;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
@@ -18,5 +19,8 @@ public class Carinventory {
 		Car car = new Car();
 		car.setMake(carMake);
 		dao.saveCar(car);
+	    List<Car> list=dao.getFetchCarDetails(); 
+	    list.forEach(e->System.out.println(e));
+
 	}
 }
